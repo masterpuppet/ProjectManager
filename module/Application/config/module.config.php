@@ -22,7 +22,7 @@ return array(
             ),
             'orm_default' => array(
                 'drivers' => array(
-                    'Application\Namespace' => 'application_annotation_driver'
+                    'Application\Entity' => 'application_annotation_driver'
                 )
             )
         )
