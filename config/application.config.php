@@ -1,13 +1,16 @@
 <?php
 return array(
-    'modules' => array(        
+    'modules' => array(
+        'ZendDeveloperTools',
         'DoctrineModule',
-        'DoctrineORMModule',        
+        'DoctrineORMModule',
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
-        'ZfcTwig',
-        'Application',  
+        'ZfcAdmin',     
+        'ZfcRbac',
+        'ZfcTwig',        
+        'Application'
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

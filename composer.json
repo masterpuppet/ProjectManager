@@ -8,13 +8,17 @@
     ],
     "homepage": "http://framework.zend.com/",
     "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
-        "doctrine/doctrine-module": "dev-master",
-        "doctrine/doctrine-orm-module": "dev-master",
+        "zendframework/zendframework": "2.1.*@dev",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zf-commons/zfc-base": "dev-master",
+        "zf-commons/zfc-user": "dev-master",
+        "zf-commons/zfc-admin": "dev-master",
         "zf-commons/zfc-user-doctrine-orm": "dev-master",
-        "zf-commons/zfc-twig": "dev-master",
-        "twig/extensions": "dev-master"
+        "zf-commons/zfc-rbac": "dev-master",
+        "zf-commons/zfc-twig": "dev-master",        
+        "doctrine/doctrine-orm-module": "0.*"        
     }
 }
