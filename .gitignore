@@ -9,4 +9,6 @@ nbproject
 composer.lock
 *sublime*
 vendor/
+data/cache/
+data/tmp/
 .tags*

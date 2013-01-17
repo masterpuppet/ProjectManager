@@ -1,6 +1,9 @@
 <?php
 
 return array(
+    'application' => array(
+        'data_path' => __DIR__ . '/../../../data/tmp'
+    ),
     'doctrine' => array(
         'connection' => array(
             'orm_default' => array(
@@ -20,8 +23,18 @@ return array(
             )
         )
     ),    
-    'router' => array(
+    'router' => array(        
         'routes' => array(
+            'foo' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
