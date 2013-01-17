@@ -4,18 +4,18 @@ namespace Application\Model;
 
 interface CommentInterface
 {
-	/**
- 	 * @return int
- 	 */
- 	public function getId();
+    /**
+     * @return int
+     */
+    public function getId();
 
- 	/**
- 	 * @param string $message
- 	 */
- 	public function setMessage($message);
+    /**
+     * @param string $message
+     */
+    public function setMessage($message);
 
- 	/**
- 	 * @return string
- 	 */
- 	public function getMessage();
+    /**
+     * @return string
+     */
+    public function getMessage();
 }
