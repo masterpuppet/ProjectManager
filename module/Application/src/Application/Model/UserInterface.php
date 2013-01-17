@@ -2,10 +2,7 @@
 
 namespace Application\Model;
 
-interface UserInterface
-{
-    /**
-     * @return int
-     */
-    public function getId();
-}
+use ZfcUser\Entity\UserInterface as BaseUserInterface;
+
+interface UserInterface extends BaseUserInterface
+{}

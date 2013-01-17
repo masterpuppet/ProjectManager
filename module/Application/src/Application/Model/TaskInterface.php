@@ -29,7 +29,7 @@ interface TaskInterface
     /**
      * @return string
      */
-    public function getdescription();   
+    public function getDescription();
 
     /**
      * @param DateTime $createdAt
@@ -67,7 +67,7 @@ interface TaskInterface
     public function removeAssignedTo(UserInterface $assignedTo);
 
     /**
-     * @return mixed 
+     * @return mixed
      */
     public function getAssignedTo();
 
@@ -83,12 +83,12 @@ interface TaskInterface
 
     /**
      * @param CommentInterface $comment
-     */     
+     */
     public function removeComment(CommentInterface $comment);
 
     /**
      * @return mixed
-     */     
+     */
     public function getComments();
 
     /**
@@ -103,11 +103,21 @@ interface TaskInterface
 
     /**
      * @param MediaInterface $media
-     */     
+     */
     public function removeMedia(MediaInterface $media);
 
     /**
      * @return mixed
-     */     
-    public function getMedia();     
+     */
+    public function getMedia();
+
+    /**
+     * @param ProjectInterface $project
+     */
+    public function setProject(ProjectInterface $project);
+
+    /**
+     * @return ProjectInterface
+     */
+    public function getProject();
 }

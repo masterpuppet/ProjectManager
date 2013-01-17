@@ -7,23 +7,23 @@ return array(
     'doctrine' => array(
         'connection' => array(
             'orm_default' => array(
-                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver'                
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver'
             )
         ),
         'driver' => array(
-            'application_annotation_driver' => array(
-                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+            'application_xml_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\XmlDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Application/Entity')
+                'paths' => array(__DIR__ . '/doctrine/orm')
             ),
             'orm_default' => array(
                 'drivers' => array(
-                    'Application\Entity' => 'application_annotation_driver'
+                    'Application\Entity' => 'application_xml_driver'
                 )
             )
         )
-    ),    
-    'router' => array(        
+    ),
+    'router' => array(
         'routes' => array(
             'foo' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',

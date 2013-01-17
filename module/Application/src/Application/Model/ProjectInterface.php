@@ -29,8 +29,8 @@ interface ProjectInterface
     /**
      * @return string
      */
-    public function getdescription();   
-    
+    public function getDescription();
+
     /**
      * @param DateTime $createdAt
      */
@@ -67,7 +67,7 @@ interface ProjectInterface
     public function removeMember(UserInterface $member);
 
     /**
-     * @return mixed 
+     * @return mixed
      */
     public function getMembers();
 
@@ -87,7 +87,7 @@ interface ProjectInterface
     public function removeTask(TaskInterface $task);
 
     /**
-     * @return mixed 
+     * @return mixed
      */
     public function getTasks();
 
