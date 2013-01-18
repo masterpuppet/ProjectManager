@@ -12,6 +12,21 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        $eventManager->attach('dispatch.error', function($e) use ($eventManager) {
+            if ($e->isError() && $e->getError() == 'error-route-unauthorized') {
+                $roles = $e->getParam('identity')->getRoles();
+                if ($roles[0] == 'anonymous') {
+                    $router = $e->getRouter();
+                    $url    = $router->assemble(array(), array('name' => 'zfcuser/login'));
+                    $response = $e->getResponse();
+                    $response->setStatusCode(302);
+                    //redirect to login route...
+                    $response->getHeaders()->addHeaderLine('Location', $url);
+                }
+            }
+        });
+
     }
 
     public function getConfig()
