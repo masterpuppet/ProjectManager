@@ -11,6 +11,23 @@
         <field name="name" type="string" length="255" />
         <field name="description" type="text" />
         <field name="createdAt" column="created_at" type="datetime" />
+
         <one-to-many field="tasks" target-entity="Task" mapped-by="project" />
+
+        <many-to-one field="owner" target-entity="User" inversed-by="owns">
+            <join-column name="owner_id" referenced-column-name="user_id" />
+        </many-to-one> 
+
+        <many-to-many field="members" target-entity="User" inversed-by="belongs">
+            <join-table name="project_users">
+                <join-columns>
+                    <join-column name="project_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="member_id" referenced-column-name="user_id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
     </entity>
 </doctrine-mapping>
