@@ -1,0 +1,53 @@
+{{ doctype() }}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    {% block title %}
+    {{ headTitle('ZF Skeleton Application') }}
+    {% endblock %}
+
+    {% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ headMeta() }}
+    {% endblock %}
+
+    {% block link %}
+    <link href="{{ basePath('/css/b.bootstrap.min.css') }}" rel="stylesheet" type="text/css">    
+    <link href="{{ basePath('/css/b.bootstrap-responsive.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ basePath('/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    {{ headLink() }}
+    {% endblock %}
+
+    {% block headscript %}
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ basePath('/js/html5.js') }}"></script>
+    <![endif]-->
+    {{ headScript() }}
+    {% endblock %}
+</head>
+
+<body>
+
+{% block nav %}{% endblock %}
+
+<div class="container">
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <hr>
+    <footer>
+        <p>&copy; 2013 by PM. All rights reserved.</p>
+    </footer>
+    {% endblock %}
+</div>
+
+{% block inlinescript %}
+{{ inlineScript() }}
+{% endblock %}
+
+</body>
+</html>

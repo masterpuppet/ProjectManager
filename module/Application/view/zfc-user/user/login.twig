@@ -1,0 +1,16 @@
+{% extends 'layout/login' %}
+
+{% block content %}
+<div class="hero-unit">
+	<h2>Sign In</h2>
+	{% do loginForm.prepare() %}
+	{% do loginForm.setAttribute('action', url('zfcuser/login')) %}
+	{% do loginForm.setAttribute('method', 'post') %}
+	{{ ztbForm(loginForm) }}
+	{% if enableRegistration %}
+	    Not registered ?     
+	    <a href="{{ url('zfcuser/register') ~ (redirect ? '?redirect=' ~ redirect : '') }}">Sign up!</a>
+	{% endif %}
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

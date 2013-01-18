@@ -8,8 +8,9 @@ use Application\Model\TaskInterface;
 use Application\Model\ProjectInterface;
 use DateTime;
 use ZfcUserDoctrineORM\Entity\User as BaseUser;
+use ZfcRbac\Identity\IdentityInterface;
 
-class User extends BaseUser
+class User extends BaseUser implements IdentityInterface
 {
     /**
      * @var Collection
@@ -61,12 +62,12 @@ class User extends BaseUser
 
     public function addCreatedTask(TaskInterface $task)
     {
-        $this->createdTask[] = $task;
+        $this->createdTasks[] = $task;
     }
 
-    public function getcreatedTask()
+    public function getCreatedTasks()
     {
-        return $this->createdTask;
+        return $this->createdTasks;
     }
 
     public function addTask(TaskInterface $task)
@@ -77,5 +78,13 @@ class User extends BaseUser
     public function getTasks()
     {
         return $this->tasks;
+    }
+
+    /**
+     * @todo create real getRoles
+     */
+    public function getRoles()
+    {
+        return array('admin');
     }
 }

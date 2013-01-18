@@ -7,9 +7,10 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
-        'ZfcAdmin',     
+        'ZfcAdmin',
         'ZfcRbac',
-        'ZfcTwig',        
+        'ZfcTwig',
+        'ZfcTwitterBootstrap',
         'Application'
     ),
     'module_listener_options' => array(

@@ -20,6 +20,7 @@
         "zf-commons/zfc-rbac": "dev-master",
         "zf-commons/zfc-twig": "dev-master",        
         "doctrine/doctrine-orm-module": "0.*",
+        "mwillbanks/zfc-twitter-bootstrap": "dev-master",
         "zendframework/zftool": "dev-master"        
     }
 }

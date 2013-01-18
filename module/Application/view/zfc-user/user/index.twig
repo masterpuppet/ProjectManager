@@ -1,0 +1,7 @@
+{% extends 'layout/default' %}
+
+{% block content %}
+{{ gravatar(zfcUserIdentity().email) }}
+<h3>Hello, {{ zfcUserDisplayName() }}!</h3>
+<a href="{{ url('zfcuser/logout') }}">[Sign Out]</a>
+{% endblock %}

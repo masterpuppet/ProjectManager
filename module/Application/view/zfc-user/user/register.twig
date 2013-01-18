@@ -1,0 +1,16 @@
+{% extends 'layout/login' %}
+
+{% block content %}
+<div class="hero-unit">
+	<h2>Register</h2>
+	{% if enableRegistration is not defined %}
+	    {{ ztbAlert('Registration is disabled') }}    
+	{% else %}
+	{% do registerForm.prepare() %}
+	{% do registerForm.setAttribute('action', url('zfcuser/register')) %}
+	{% do registerForm.setAttribute('method', 'post') %}
+	{{ ztbForm(registerForm) }}
+	{% endif %}
+	</div>
+{% endblock %}
+{% block footer %}{% endblock %}
