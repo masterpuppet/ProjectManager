@@ -28,7 +28,7 @@ class ProjectService
      * @throws Exception\DomainException
      * @return project
      */
-    public function create(project $project)
+    public function create(Project $project)
     {
         if ($project->getName() === '' || $project->getName() === null) {
             throw new Exception\DomainException('A Project must have a name, but none was given');
