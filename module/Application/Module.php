@@ -3,9 +3,17 @@
 namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
+use Zend\EventManager\EventInterface;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
 
-class Module
+class Module implements
+    AutoloaderProviderInterface,
+    ConfigProviderInterface,
+    ServiceProviderInterface
 {
+
     public function onBootstrap($e)
     {
         $e->getApplication()->getServiceManager()->get('translator');
@@ -42,6 +50,31 @@ class Module
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__
                 ),
             ),
+        );
+    }
+
+    public function getServiceConfig()
+    {
+        return array(
+            /**
+             * Factories
+             */
+            'factories' => array(
+                'Application\Service\ProjectService' => function($serviceManager) {
+                    $projectMapper = $serviceManager->get('Application\Mapper\ProjectMapperInterface');
+                    return new Service\ProjectService($projectMapper);
+                },
+                'Application\Service\TaskService' => function($serviceManager) {
+                    $taskMapper = $serviceManager->get('Application\Mapper\TaskMapperInterface');
+                    return new Service\TaskService($taskMapper);
+                },
+            ),
+            /**
+             * Abstract factories
+             */
+            'abstract_factories' => array(
+                'Application\ServiceFactory\MapperAbstractFactory'
+            )
         );
     }
 }

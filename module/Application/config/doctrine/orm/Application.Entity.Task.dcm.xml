@@ -4,7 +4,8 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
                   
-    <entity name="Application\Entity\Task" table="tasks">
+    <entity name="Application\Entity\Task" table="tasks"
+            repository-class="Application\Repository\TaskRepository">
         
     	<id name="id" type="integer">
             <generator strategy="AUTO" />
